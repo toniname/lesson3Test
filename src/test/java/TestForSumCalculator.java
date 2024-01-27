@@ -20,7 +20,7 @@ class TestForSumCalculator {
     }
 
     @Test
-    void testSumWithPositiveInputTree() {
+    void testSumWithPositiveInputThree() {
         assertEquals(6, (sumCalculator.sum(3)));
     }
 
