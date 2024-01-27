@@ -24,11 +24,8 @@ class TestForSumCalculator {
     }
 
     @Test
-     void testWithZeroInput(){
-        assertEquals(0, (sumCalculator.sum(0)));
-    }
-    @Test
      void testSumWithNegativeInput(){
         assertThrows(IllegalArgumentException.class, ()-> sumCalculator.sum(-1));
+        assertThrows(IllegalArgumentException.class, ()->sumCalculator.sum(0));
     }
 }
