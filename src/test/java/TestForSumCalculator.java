@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class TestForSumCalculator {
-
     private SumCalculator sumCalculator;
 
     @BeforeEach
@@ -15,17 +14,28 @@ class TestForSumCalculator {
         sumCalculator = new SumCalculator();
     }
 
+    @Test
+    void testSumWithPositiveInput() {
+        assertEquals(1, (sumCalculator.sum(1)));
+    }
 
     @Test
-     void testSumWithPositiveInput() {
-        assertEquals(1, (sumCalculator.sum(1)));
+    void testSumWithPositiveInputTree() {
         assertEquals(6, (sumCalculator.sum(3)));
+    }
+
+    @Test
+    void testSumWithPositiveInputFive() {
         assertEquals(15, (sumCalculator.sum(5)));
     }
 
     @Test
-     void testSumWithNegativeInput(){
-        assertThrows(IllegalArgumentException.class, ()-> sumCalculator.sum(-1));
-        assertThrows(IllegalArgumentException.class, ()->sumCalculator.sum(0));
+    void testSumWithZeroInput() {
+        assertThrows(IllegalArgumentException.class, () -> sumCalculator.sum(0));
+    }
+
+    @Test
+    void testSumWithNegativeInput() {
+        assertThrows(IllegalArgumentException.class, () -> sumCalculator.sum(-1));
     }
 }
